@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic homepage of Yue Wu in the School of Robotics and Automation at Nanjing University.">
+  <meta name="theme-color" content="#fafaf8">
+  <title>Yue Wu — Nanjing University</title>
+  <style>
+    :root {
+      --paper: #fafaf8;
+      --ink: #171a19;
+      --muted: #616765;
+      --faint: #8b918e;
+      --line: #d9ddda;
+      --accent: #234e52;
+      --accent-light: #e9f0ef;
+      --serif: Georgia, "Times New Roman", "Noto Serif", serif;
+      --sans: "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    ::selection {
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 3px;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      background: rgba(250, 250, 248, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header .container {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .site-name {
+      flex: 0 0 auto;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
+    main {
+      display: block;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(230px, 0.7fr);
+      gap: clamp(48px, 8vw, 100px);
+      padding: 84px 0 76px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-family: var(--serif);
+      font-size: clamp(46px, 7vw, 74px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .position {
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .intro-copy {
+      max-width: 690px;
+      margin-bottom: 0;
+      color: #343a38;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .intro-copy strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .profile-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .profile-links svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+
+    .details {
+      align-self: start;
+      padding-top: 9px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .details dl {
+      margin: 0;
+    }
+
+    .details div {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 14px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .details dt {
+      color: var(--faint);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      line-height: 1.7;
+      text-transform: uppercase;
+    }
+
+    .details dd {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 44px;
+      padding: 58px 0 64px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .section-note {
+      margin-bottom: 0;
+      color: var(--faint);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .section-content > p {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: #343a38;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .interest-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .interest-list li {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 32px;
+      padding: 23px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .interest-list h3 {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .interest-list p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .education {
+      margin: 0;
+    }
+
+    .education-item {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 32px;
+      padding-bottom: 25px;
+    }
+
+    .education-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .education-date {
+      color: var(--faint);
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .education-item h3 {
+      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .education-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .research-statement {
+      padding: 24px 26px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-light);
+    }
+
+    .research-statement p {
+      max-width: 720px;
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .contact-item {
+      min-width: 0;
+      padding: 20px 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-item span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--faint);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-item a,
+    .contact-item p {
+      margin: 0;
+      overflow-wrap: anywhere;
+      font-family: var(--serif);
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+
+    footer .container {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--faint);
+      font-size: 12px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(calc(100% - 36px), var(--max-width));
+      }
+
+      .site-header .container {
+        min-height: 62px;
+      }
+
+      .site-nav {
+        gap: 18px;
+      }
+
+      .site-nav li:nth-child(3) {
+        display: none;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        padding: 58px 0 52px;
+      }
+
+      .section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 46px 0 52px;
+      }
+
+      .section-note {
+        display: none;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .site-nav {
+        gap: 15px;
+      }
+
+      .site-nav li:nth-child(2) {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(42px, 15vw, 58px);
+      }
+
+      .position {
+        font-size: 18px;
+      }
+
+      .intro-copy {
+        font-size: 16px;
+      }
+
+      .details div {
+        grid-template-columns: 72px 1fr;
+      }
+
+      .interest-list li {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .education-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-statement {
+        padding: 21px 20px;
+      }
+
+      footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 18px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container">
+      <a class="site-name" href="#top">Yue Wu</a>
+      <nav aria-label="Primary navigation">
+        <ul class="site-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Nanjing University</p>
+          <h1 id="page-title">Yue Wu</h1>
+          <p class="position">
+            School of Robotics and Automation<br>
+            Nanjing University
+          </p>
+          <p class="intro-copy">
+            I study in the School of Robotics and Automation at Nanjing University.
+            My research interests are <strong>reinforcement learning</strong> and
+            <strong>embodied intelligence</strong>.
+          </p>
+          <div class="profile-links" aria-label="Profile links">
+            <a href="mailto:yue-wu@smail.nju.edu.cn">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="5" width="18" height="14" rx="1"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+              yue-wu@smail.nju.edu.cn
+            </a>
+          </div>
+        </div>
+
+        <aside class="details" aria-label="Academic details">
+          <dl>
+            <div>
+              <dt>Affiliation</dt>
+              <dd>Nanjing University</dd>
+            </div>
+            <div>
+              <dt>School</dt>
+              <dd>School of Robotics and Automation</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Reinforcement Learning · Embodied AI</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="section" id="about">
+        <header>
+          <h2 class="section-heading">About</h2>
+          <p class="section-note">Academic background and current interests</p>
+        </header>
+        <div class="section-content">
+          <p>
+            I study in the School of Robotics and Automation at Nanjing University.
+            My research interests are reinforcement learning and embodied intelligence.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <header>
+          <h2 class="section-heading">Research<br>Interests</h2>
+          <p class="section-note">Topics I hope to study and explore further</p>
+        </header>
+        <div class="section-content">
+          <ul class="interest-list">
+            <li>
+              <h3>Reinforcement Learning</h3>
+              <p>
+                I am interested in how agents can learn effective policies through
+                interaction, especially in uncertain environments.
+              </p>
+            </li>
+            <li>
+              <h3>Embodied Intelligence</h3>
+              <p>
+                I am interested in how perception and action can be integrated to support
+                intelligent behavior in the physical world.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <header>
+          <h2 class="section-heading">Education</h2>
+          <p class="section-note">Current degree and academic training</p>
+        </header>
+        <div class="section-content">
+          <div class="education">
+            <div class="education-item">
+              <div class="education-date">Undergraduate</div>
+              <div>
+                <h3>Nanjing University</h3>
+                <p>School of Robotics and Automation</p>
+                <p>Nanjing, China</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <header>
+          <h2 class="section-heading">Contact</h2>
+          <p class="section-note">For research discussions and collaboration</p>
+        </header>
+        <div class="section-content">
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span>Email</span>
+              <a href="mailto:yue-wu@smail.nju.edu.cn">yue-wu@smail.nju.edu.cn</a>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Nanjing, China</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 Yue Wu</span>
+      <span>Last updated: November 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
